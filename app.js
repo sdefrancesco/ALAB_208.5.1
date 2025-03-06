@@ -74,8 +74,59 @@ function printNumbers(num) {
     }
 
     printNumbers(num - 1)
-    console.log(num)
+    console.log(num + "\n")
 }
 
 printNumbers(10)
 
+
+
+// Part 2: Thinking Methodically
+
+let ppl = [
+    { 
+        id: "42", 
+        name: "Bruce", 
+        occupation: "Knight", 
+        age: "41" 
+        
+    },
+    { 
+        id: "48", 
+        name: "Barry", 
+        occupation: "Runner", 
+        age: "25"
+    },
+    { 
+        id: "57", 
+        name: "Bob", 
+        occupation: "Fry Cook", 
+        age: "19" 
+    }, 
+    { 
+        id: "63", 
+        name: "Blaine", 
+        occupation: "Quiz Master", 
+        age: "58" 
+    }, 
+    {
+        id: "7", 
+        name: "Bilbo", 
+        occupation: "None", 
+        age: "111" 
+    }
+]
+
+// Sort the people array by age youngest to oldest
+let sortPplYoungestToOldest = (pplArray) => {
+
+    // array.sort method learned from w3schools array methods
+    pplArray.sort((person1, person2) => {
+        // convert age strings to numbers to compare them
+        return Number(person1.age) - Number(person2.age)
+    });
+
+    return pplArray // return the sorted array
+}
+
+console.log(sortPplYoungestToOldest(ppl)) // log the sorted array
