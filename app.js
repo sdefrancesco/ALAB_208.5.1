@@ -130,3 +130,20 @@ let sortPplYoungestToOldest = (pplArray) => {
 }
 
 console.log(sortPplYoungestToOldest(ppl)) // log the sorted array
+
+// Filter the array to remove entries with an age greater than 50.
+let peopleUnderFifty = (pplArray) => {
+    // push each person to new array to return it to console
+    let newPplArr = []
+    pplArray.filter((person)=> {
+        // have to turn age into number again to compare with 50
+        if(Number(person.age) <= 50) {
+            // add each person to new array
+            newPplArr.push(person)
+        }
+    })
+    return newPplArr
+}
+
+console.log(peopleUnderFifty(ppl))
+
