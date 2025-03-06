@@ -66,3 +66,16 @@ let compareStringToNumber = (arrOfStrings, number) => {
 
 console.log(compareStringToNumber(strings, 5))
 
+
+// Take a number, n, and print every number between 1 and n without using loops. Use recursion.
+function printNumbers(num) {
+    if (num < 1) {
+        return
+    }
+
+    printNumbers(num - 1)
+    console.log(num)
+}
+
+printNumbers(10)
+
