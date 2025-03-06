@@ -162,3 +162,36 @@ let updatedPpl = (pplArray) => {
 }
 
 console.log('change occupation to job and increment age by 1', updatedPpl(ppl))
+
+// Use the reduce method to calculate the sum of the ages.
+// Then use the result to calculate the average age.
+
+let sumOfAges = ppl.reduce((acc, person) => {
+    return acc + Number(person.age) // Convert age to number and add it to the accumulator
+}, 0)
+
+// Calculate the average age
+let avgAge = sumOfAges / ppl.length
+
+console.log(`sum of ages is ${sumOfAges} and average age is ${avgAge}`)
+
+
+// Part 3: Thinking Critically
+
+// develop function to take an object and increment its age field
+let incrementAgeField = (person) => {
+    person.age = Number(person.age) + 1
+    return person
+}
+
+console.log(incrementAgeField(ppl[0]))
+
+// Take an object, make a copy, and increment the age field of the copy. Return the copy.
+let makeCopyAndIncrement = (person) => {
+    let newObj = {
+        ...person,
+        age: Number(person.age) + 1
+    }
+    return newObj
+}
+console.log(makeCopyAndIncrement(ppl[1]))
