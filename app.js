@@ -133,17 +133,32 @@ console.log(sortPplYoungestToOldest(ppl)) // log the sorted array
 
 // Filter the array to remove entries with an age greater than 50.
 let peopleUnderFifty = (pplArray) => {
-    // push each person to new array to return it to console
-    let newPplArr = []
-    pplArray.filter((person)=> {
+    let newPplArr = pplArray.filter((person)=> {
         // have to turn age into number again to compare with 50
         if(Number(person.age) <= 50) {
-            // add each person to new array
-            newPplArr.push(person)
+            // return each person to new array
+            return person
         }
     })
     return newPplArr
 }
 
-console.log(peopleUnderFifty(ppl))
+console.log('remove people under fifty', peopleUnderFifty(ppl))
 
+
+
+// Map the array to change 'occupation' to 'job' and increment age by 1
+let updatedPpl = (pplArray) => {
+    // further learned .map() from w3 schools array methods when noticiing the keywords 'map the array' in the assignment
+    let newArr = pplArray.map(person => {
+        return {
+            id: person.id,
+            name: person.name,                  
+            job: person.occupation,     
+            age: Number(person.age) + 1 
+        }
+    })
+    return newArr
+}
+
+console.log('change occupation to job and increment age by 1', updatedPpl(ppl))
